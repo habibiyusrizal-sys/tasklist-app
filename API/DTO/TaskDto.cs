@@ -1,10 +1,9 @@
 using System;
 
-namespace API.Entitites;
+namespace API.DTO;
 
-public class TaskRecord
+public class TaskDto
 {
-    public int Id { get; set; }
     public required string TaskName { get; set; }
     public required DateOnly TaskDate { get; set; }
 }

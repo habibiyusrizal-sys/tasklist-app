@@ -1,0 +1,77 @@
+.task-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Ensure form fields and button are aligned properly */
+.task-container mat-form-field {
+    width: 100%;
+}
+
+/* Style the button */
+.task-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-transform: uppercase;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto; /* Checkbox | Task Name (expandable) | Date | Delete */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.task-checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.task-text {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+
+.task-date {
+  min-width: 110px;
+  text-align: right;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.success-message {
+  color: green;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+}

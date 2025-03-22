@@ -1,0 +1,42 @@
+
+<main class="task-container">
+    <div *ngIf="successMessage" class="success-message">
+        {{successMessage}}
+    </div>
+    <div>
+        <!-- Task Name Input -->
+        <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="newTask" placeholder="Enter new task">
+        </mat-form-field>
+
+        <!-- Datepicker Input -->
+        <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="selectedDate" [matDatepicker]="picker" placeholder="Select date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- Add Button -->
+        <button mat-flat-button color="primary" (click)="addTask()">Add</button>
+
+        <mat-list>
+            <mat-list-item *ngFor="let task of tasks" class="task-item">
+                <div class="task-content">
+                    <input
+                        type="checkbox"
+                        (change)="toggleCompleted(task)"
+                        class="task-checkbox"
+                    />
+                    <span class="task-text" [ngClass]="{ 'completed': task.completed }">{{ task.taskName }}  </span>
+                    <span class="task-date">{{ task.taskDate | date: 'dd-MM-yyyy' }}</span>
+                    <button mat-icon-button color="warn" (click)="deleteTask(task.id)" >
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</main>
+
+
+<router-outlet />
